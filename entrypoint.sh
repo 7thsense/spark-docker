@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 COMMAND=$1
 mkdir -p /tmp/logs
-chown -R spark /tmp
-if [ "${COMMAND}" == "submit" ]; then
+chown -R daemon /tmp
+if [ "${COMMAND}" == "spark-submit" ]; then
     shift
-    # TODO: parse out and download s3 urls
-    gosu spark spark-submit $@
+    gosu daemon spark-submit $@
+elif [ "${COMMAND}" == "spark-shell" ]; then
+    shift
+    gosu daemon spark-shell $@
 else
-    gosu spark $@
+    exec $@
 fi
