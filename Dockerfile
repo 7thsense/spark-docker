@@ -4,7 +4,7 @@ COPY bootstrap.sh /root/
 RUN /bin/bash /root/bootstrap.sh
 COPY install.sh /root/
 RUN /bin/bash /root/install.sh
-VOLUME /tmp /efs /efs-home
+VOLUME /scratch /scratch2
 ENV SPARK_HOME "/opt/spark"
 ENV PATH "$PATH:$SPARK_HOME/bin"
 ENV JAVA_HOME "/usr/java/latest"

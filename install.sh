@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+install -d -o2 -g 2 /scratch /scratch2
 install -d -o 2 -g 2 /var/lib/daemon
 usermod -d /var/lib/daemon daemon
 sync
