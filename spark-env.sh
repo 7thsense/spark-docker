@@ -33,6 +33,7 @@
 # - SPARK_CLASSPATH, default classpath entries to append
 # - SPARK_LOCAL_DIRS, storage directories to use on this node for shuffle and RDD data
 # - MESOS_NATIVE_JAVA_LIBRARY, to point to your libmesos.so if you use Mesos
+SPARK_LOCAL_DIRS=/scratch,/scratch2
 
 # Options read in YARN client mode
 # - HADOOP_CONF_DIR, to point Spark towards Hadoop configuration files
@@ -65,5 +66,5 @@
 # - SPARK_NICENESS      The scheduling priority for daemons. (Default: 0)
 # - SPARK_NO_DAEMONIZE  Run the proposed command in the foreground. It will not output a PID file.
 
-SPARK_LOG_DIR=/tmp/logs
+SPARK_LOG_DIR=/var/log/spark
 HADOOP_CONF_DIR=/opt/spark/conf
