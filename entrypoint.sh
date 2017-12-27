@@ -8,6 +8,15 @@ if [ "${COMMAND}" == "spark-submit" ]; then
 elif [ "${COMMAND}" == "spark-shell" ]; then
     shift
     gosu daemon spark-shell $@
+elif [ "${COMMAND}" == "spark-standalone" ]; then
+    shift
+    gosu daemon spark-shell $@
+elif [ "${COMMAND}" == "spark-master" ]; then
+    shift
+    gosu daemon spark-shell $@
+elif [ "${COMMAND}" == "spark-worker" ]; then
+    shift
+    gosu daemon spark-shell $@
 else
     exec $@
 fi

@@ -1,4 +1,4 @@
-FROM 7thsense/java:8u131
+FROM amazonlinux:2
 MAINTAINER Erik LaBianca <erik@7thsense.io>
 COPY bootstrap.sh /root/
 RUN /bin/bash /root/bootstrap.sh
@@ -7,7 +7,7 @@ RUN /bin/bash /root/install.sh
 VOLUME /scratch /scratch2
 ENV SPARK_HOME "/opt/spark"
 ENV PATH "$PATH:$SPARK_HOME/bin"
-ENV JAVA_HOME "/usr/java/latest"
+ENV JAVA_HOME "/usr/lib/jvm/jre"
 COPY spark-env.sh hive-site.xml spark-defaults.conf /opt/spark/conf/
 COPY configure.sh /root/
 RUN /bin/bash /root/configure.sh

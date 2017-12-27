@@ -5,9 +5,9 @@ usermod -d /var/lib/daemon daemon
 sync
 
 HADOOP_VERSION="2.7"
-SPARK_VERSION="2.1.1"
+SPARK_VERSION="2.2.1"
 cd /opt
-wget --quiet http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
+curl -o spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz http://mirrors.advancedhosters.com/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
 tar -xzf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
 rm spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
 mv /opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} /opt/spark
