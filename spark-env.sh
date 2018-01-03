@@ -41,6 +41,7 @@ SPARK_LOCAL_DIRS=/scratch,/scratch2
 # - SPARK_EXECUTOR_CORES, Number of cores for the executors (Default: 1).
 # - SPARK_EXECUTOR_MEMORY, Memory per Executor (e.g. 1000M, 2G) (Default: 1G)
 # - SPARK_DRIVER_MEMORY, Memory for Driver (e.g. 1000M, 2G) (Default: 1G)
+SPARK_EXECUTOR_MEMORY=2g
 
 # Options for the daemons used in the standalone deploy mode
 # - SPARK_MASTER_HOST, to bind the master to a different IP address or hostname
@@ -66,5 +67,6 @@ SPARK_LOCAL_DIRS=/scratch,/scratch2
 # - SPARK_NICENESS      The scheduling priority for daemons. (Default: 0)
 # - SPARK_NO_DAEMONIZE  Run the proposed command in the foreground. It will not output a PID file.
 
+SPARK_NICENESS=20
 SPARK_LOG_DIR=/var/log/spark
 HADOOP_CONF_DIR=/opt/spark/conf
